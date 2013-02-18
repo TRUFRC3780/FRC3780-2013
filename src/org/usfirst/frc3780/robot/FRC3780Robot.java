@@ -22,10 +22,8 @@ package org.usfirst.frc3780.robot;
 
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc3780.commands.*;
 import org.usfirst.frc3780.subsystems.*;
 
 /**

@@ -29,14 +29,14 @@ public class RobotMap {
     final public static int jesusFrontReversePort = 2;
     
     final public static int jesusBackModule = 1;
-    final public static int jesusBackForwardPort = 7;
-    final public static int jesusBackReversePort = 8;
+    final public static int jesusBackForwardPort = 3;
+    final public static int jesusBackReversePort = 4;
     
     //    Drive
-    final public static int chassisFrontLeftDriveID = 2;
-    final public static int chassisRearLeftDriveID = 3;
-    final public static int chassisFrontRightDriveID = 4;
-    final public static int chassisRearRightDriveID = 5;
+    final public static int chassisFrontLeftDriveID = 3;
+    final public static int chassisRearLeftDriveID = 2;
+    final public static int chassisFrontRightDriveID = 5;
+    final public static int chassisRearRightDriveID = 4;
     
     //    Compressor
     final public static int compressorRelayChannel = 1;
@@ -48,6 +48,10 @@ public class RobotMap {
     
     //    Joystick
     final public static int driveJoystickPort = 1;
-    final public static int walleButtonPort = 3;
+    final public static int walleOpenButtonPort = 5;
+    final public static int walleCloseButtonPort = 4;
+    final public static int jesusAscendAllButtonPort = 3;
+    final public static int jesusAscendRearButtonPort = 1;
+    final public static int jesusCrucifyButtonPort = 2;
     
 }

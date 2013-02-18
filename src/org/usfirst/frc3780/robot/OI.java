@@ -35,13 +35,30 @@ public class OI {
     }
     
     private final Joystick driveJoystick;
-    private final Button walleButton;
+    private final Button walleOpenButton;
+    private final Button walleClosedButton;
+    private final Button jesusAscendAllButton;
+    private final Button jesusAscendRearButton;
+    private final Button jesusCrucifyButton;
     
     private OI() {
+        
         driveJoystick = new Joystick(RobotMap.driveJoystickPort);
         
-        walleButton = new JoystickButton(driveJoystick, RobotMap.walleButtonPort);
-        walleButton.whenPressed(new WallEToggle());
+        walleOpenButton = new JoystickButton(driveJoystick, RobotMap.walleOpenButtonPort);
+        walleOpenButton.whenPressed(new WallEOpen());
+        
+        walleClosedButton = new JoystickButton(driveJoystick, RobotMap.walleCloseButtonPort);
+        walleClosedButton.whenPressed(new WallEClose());
+        
+        jesusAscendAllButton = new JoystickButton(driveJoystick, RobotMap.jesusAscendAllButtonPort);
+        jesusAscendAllButton.whenPressed(new JesusAscendAll());
+        
+        jesusAscendRearButton = new JoystickButton(driveJoystick, RobotMap.jesusAscendRearButtonPort);
+        jesusAscendRearButton.whenPressed(new JesusAscendRear());
+        
+        jesusCrucifyButton = new JoystickButton(driveJoystick, RobotMap.jesusCrucifyButtonPort);
+        jesusCrucifyButton.whenPressed(new JesusCrucify());
     }
     
     
