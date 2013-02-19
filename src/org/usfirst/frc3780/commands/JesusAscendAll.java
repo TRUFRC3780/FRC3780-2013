@@ -18,7 +18,7 @@ import org.usfirst.frc3780.subsystems.Jesus;
 import org.usfirst.frc3780.subsystems.Jesus.State;
 
 /**
- *
+ * Extends all pistons.
  * @author Brian
  */
 public class JesusAscendAll extends Command {
@@ -43,4 +43,5 @@ public class JesusAscendAll extends Command {
 
     protected void interrupted() {
     }
+    
 }

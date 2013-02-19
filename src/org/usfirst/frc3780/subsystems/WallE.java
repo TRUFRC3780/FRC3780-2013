@@ -18,8 +18,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc3780.robot.RobotMap;
 
 /**
- *
- * @author Brian
+ * The subsystem for the servo.
+ * @author Brian + Oliver
  */
 public class WallE extends Subsystem {
 
@@ -32,7 +32,10 @@ public class WallE extends Subsystem {
         return __instance;
     }
     
+    
     private Servo _servo;
+    
+    //  Values to calibrate servo.
     private int ServoOpenValue;
     private int ServoClosedValue;
     
@@ -48,6 +51,10 @@ public class WallE extends Subsystem {
         _servo.set(ServoClosedValue);
     }
     
+    /**
+     * Sees if the servo is open.
+     * @return If the servo is open or closed.
+     */
     public boolean getOpen() {
         if (Math.abs(_servo.get()-ServoOpenValue) < .1) {
             return true;
@@ -58,4 +65,5 @@ public class WallE extends Subsystem {
     
     public void initDefaultCommand() {
     }
+    
 }

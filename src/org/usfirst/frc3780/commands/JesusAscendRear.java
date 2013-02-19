@@ -18,7 +18,7 @@ import org.usfirst.frc3780.subsystems.Jesus;
 import org.usfirst.frc3780.subsystems.Jesus.State;
 
 /**
- *
+ * Extends rear pistons only.
  * @author Brian
  */
 public class JesusAscendRear extends Command {
@@ -43,4 +43,5 @@ public class JesusAscendRear extends Command {
 
     protected void interrupted() {
     }
+    
 }

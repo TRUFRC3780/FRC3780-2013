@@ -18,7 +18,7 @@ import org.usfirst.frc3780.subsystems.Jesus;
 import org.usfirst.frc3780.subsystems.Jesus.State;
 
 /**
- *
+ * Retracts all pistons.
  * @author Brian
  */
 public class JesusCrucify extends Command {
@@ -43,4 +43,5 @@ public class JesusCrucify extends Command {
 
     protected void interrupted() {
     }
+    
 }

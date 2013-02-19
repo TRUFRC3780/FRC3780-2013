@@ -18,8 +18,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc3780.robot.RobotMap;
 
 /**
- *
- * @author Brian
+ * The subsystem for the pneumatics.
+ * @author Brian + Oliver
  */
 public class Jesus extends Subsystem {
 
@@ -51,6 +51,7 @@ public class Jesus extends Subsystem {
         private State(int state) {
             this.state = state;
         }
+        
     }
     
     private DoubleSolenoid _front;
@@ -65,6 +66,7 @@ public class Jesus extends Subsystem {
         }
         return __instance;
     }
+    
     
     /**
      * Set the state of Jesus.
@@ -115,4 +117,5 @@ public class Jesus extends Subsystem {
     
     public void initDefaultCommand() {
     }
+    
 }

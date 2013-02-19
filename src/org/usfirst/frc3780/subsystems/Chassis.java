@@ -20,17 +20,13 @@ import org.usfirst.frc3780.commands.DriveRobot;
 import org.usfirst.frc3780.robot.RobotMap;
 
 /**
- *
- * @author Brian
+ * The chassis subsystem.
+ * @author Brian + Oliver
  */
 public class Chassis extends Subsystem {
     
     private static Chassis __instance;
     private RobotDrive _drive;
-
-    public void arcadeDrive(Joystick j) {
-        _drive.arcadeDrive(j);
-    }
     
     public static Chassis getInstance() {
         if(__instance == null) {
@@ -49,17 +45,21 @@ public class Chassis extends Subsystem {
     private CANJaguar _rearLeftDrive;
     private CANJaguar _frontRightDrive;
     private CANJaguar _rearRightDrive;
-
-    public void initDefaultCommand() {
-        setDefaultCommand(new DriveRobot());
-    }
     
+    public void arcadeDrive(Joystick j) {
+        _drive.arcadeDrive(j);
+    }
+        
     private Chassis() throws CANTimeoutException {
         _frontLeftDrive = new CANJaguar(RobotMap.chassisFrontLeftDriveID);
         _rearLeftDrive = new CANJaguar(RobotMap.chassisRearLeftDriveID);
         _frontRightDrive = new CANJaguar(RobotMap.chassisFrontRightDriveID);
         _rearRightDrive = new CANJaguar(RobotMap.chassisRearRightDriveID);
         _drive = new RobotDrive(_frontLeftDrive, _rearLeftDrive, _frontRightDrive, _rearRightDrive);
+    }
+    
+    public void initDefaultCommand() {
+        setDefaultCommand(new DriveRobot());
     }
     
 }

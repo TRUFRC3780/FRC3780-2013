@@ -35,18 +35,17 @@ import org.usfirst.frc3780.subsystems.*;
  */
 public class FRC3780Robot extends IterativeRobot {
 
-    
     private Compressor _compressor;
+    //  Command autonomousCommand;
     
-    
-//    Command autonomousCommand;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-        // instantiate the command used for the autonomous period
-//        autonomousCommand = new ExampleCommand();
+        
+        //  TODO: instantiate the command used for the autonomous period
+        //  autonomousCommand = new ExampleCommand();
 
         //  Compressor code.
         _compressor = new Compressor(RobotMap.compressorPressureSwitchChannel, RobotMap.compressorRelayChannel);
@@ -60,8 +59,11 @@ public class FRC3780Robot extends IterativeRobot {
         
     }
 
+    /**
+     * This function runs when autonomous begins.
+     */
     public void autonomousInit() {
-        // schedule the autonomous command (example)
+        // TODO: schedule the autonomous command
         // autonomousCommand.start();
     }
 
@@ -72,11 +74,11 @@ public class FRC3780Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     }
 
+    /**
+     * This function runs when teleop begins.
+     */
     public void teleopInit() {
-	// This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to 
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
+        // TODO: Make sure autonomous stops running.
         // autonomousCommand.cancel();
     }
 
