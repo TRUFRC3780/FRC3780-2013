@@ -49,6 +49,10 @@ public class Chassis extends Subsystem {
     public void arcadeDrive(Joystick j) {
         _drive.arcadeDrive(j);
     }
+    
+    public void arcadeDrive(double magnitude, double turn) {
+        _drive.arcadeDrive(magnitude, turn);
+    }
         
     private Chassis() throws CANTimeoutException {
         _frontLeftDrive = new CANJaguar(RobotMap.chassisFrontLeftDriveID);

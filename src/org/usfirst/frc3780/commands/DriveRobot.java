@@ -31,7 +31,7 @@ public class DriveRobot extends Command {
     }
 
     protected void execute() {
-        Chassis.getInstance().arcadeDrive(OI.getInstance().getDriveJoystick());        
+        Chassis.getInstance().arcadeDrive(-1*OI.getInstance().getDriveJoystick().getY(),OI.getInstance().getDriveJoystick().getX());
     }
 
     protected boolean isFinished() {
