@@ -27,7 +27,7 @@ public class RobotMap {
     final public static int jesusFrontReversePort = 2;
     
     final public static int jesusBackModule = 1;
-    final public static int jesusBackForwardPort = 3;
+    final public static int jesusBackForwardPort = 7;
     final public static int jesusBackReversePort = 4;
     
     //    Drive
@@ -38,7 +38,7 @@ public class RobotMap {
     
     //    Compressor
     final public static int compressorRelayChannel = 1;
-    final public static int compressorPressureSwitchChannel = 2;
+    final public static int compressorPressureSwitchChannel = 1;
     
     //    Servo
     final public static int walleServoSlot = 1;

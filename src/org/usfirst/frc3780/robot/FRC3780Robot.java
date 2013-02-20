@@ -24,6 +24,7 @@ package org.usfirst.frc3780.robot;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.usfirst.frc3780.commands.JesusCrucify;
 import org.usfirst.frc3780.subsystems.*;
 
 /**
@@ -56,6 +57,9 @@ public class FRC3780Robot extends IterativeRobot {
         Jesus.getInstance();
         WallE.getInstance();
         OI.getInstance();
+        
+        Scheduler.getInstance().add(new JesusCrucify());
+        Scheduler.getInstance().run();
         
     }
 

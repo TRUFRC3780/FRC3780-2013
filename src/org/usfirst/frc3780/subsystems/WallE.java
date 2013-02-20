@@ -36,8 +36,8 @@ public class WallE extends Subsystem {
     private Servo _servo;
     
     //  Values to calibrate servo.
-    private int ServoOpenValue;
-    private int ServoClosedValue;
+    private int ServoOpenValue = 0;
+    private int ServoClosedValue = 1;
     
     private WallE() {
         _servo = new Servo(RobotMap.walleServoSlot, RobotMap.walleServoChannel);
