@@ -31,10 +31,10 @@ public class RobotMap {
     final public static int jesusBackReversePort = 4;
     
     //    Drive
-    final public static int chassisFrontLeftDriveID = 3;
-    final public static int chassisRearLeftDriveID = 2;
-    final public static int chassisFrontRightDriveID = 5;
-    final public static int chassisRearRightDriveID = 4;
+    final public static int chassisFrontLeftDriveID = 5;
+    final public static int chassisRearLeftDriveID = 4;
+    final public static int chassisFrontRightDriveID = 3;
+    final public static int chassisRearRightDriveID = 2;
     
     //    Compressor
     final public static int compressorRelayChannel = 1;
