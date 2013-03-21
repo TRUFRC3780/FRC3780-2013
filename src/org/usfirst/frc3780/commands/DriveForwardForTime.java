@@ -21,41 +21,39 @@ import org.usfirst.frc3780.subsystems.Chassis;
  * @author ograff
  */
 public class DriveForwardForTime extends Command{
+    
     private Timer timer;
-    private double numberOfMiliseconds;
+    private double numberOfSeconds;
     private double speed;
+    
     public DriveForwardForTime(double numberOfSeconds, double speed) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+
         requires(Chassis.getInstance());
-        numberOfMiliseconds = numberOfSeconds*1000;
+        this.numberOfSeconds = numberOfSeconds;
         timer = new Timer();
         timer.stop();
         this.speed = speed;
+        
     }
 
-    // Called just before this Command runs the first time
     protected void initialize() {
         timer.start();
     }
 
-    // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Chassis.getInstance().driveStraightAtSpeed(.5);
+        Chassis.getInstance().driveStraightAtSpeed(speed);
     }
 
-    // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return timer.get() >= numberOfMiliseconds;
+        // System.out.println(timer.get());
+        return timer.get() >= numberOfSeconds;
     }
 
-    // Called once after isFinished returns true
     protected void end() {
         Chassis.getInstance().driveStraightAtSpeed(0);
     }
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
     protected void interrupted() {
     }
+    
 }

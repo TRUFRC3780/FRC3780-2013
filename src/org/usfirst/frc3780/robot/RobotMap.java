@@ -53,6 +53,6 @@ public class RobotMap {
     final public static int jesusAscendRearButtonPort = 1;
     final public static int jesusCrucifyButtonPort = 2;
     
-    final public static double timeToGetToGoal = 5;
+    final public static double timeToGetToGoal = 4;
     final public static double timeToDump = 5;
 }
