@@ -22,8 +22,10 @@ package org.usfirst.frc3780.robot;
 
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.usfirst.frc3780.commands.AutoCommandGroup;
 import org.usfirst.frc3780.commands.JesusCrucify;
 import org.usfirst.frc3780.subsystems.*;
 
@@ -37,6 +39,7 @@ import org.usfirst.frc3780.subsystems.*;
 public class FRC3780Robot extends IterativeRobot {
 
     private Compressor _compressor;
+    private Command autoCommand;
     //  Command autonomousCommand;
     
     /**
@@ -61,6 +64,8 @@ public class FRC3780Robot extends IterativeRobot {
         Scheduler.getInstance().add(new JesusCrucify());
         Scheduler.getInstance().run();
         
+        autoCommand = new AutoCommandGroup();
+        
     }
 
     /**
@@ -69,6 +74,7 @@ public class FRC3780Robot extends IterativeRobot {
     public void autonomousInit() {
         // TODO: schedule the autonomous command
         // autonomousCommand.start();
+        autoCommand.start();
     }
 
     /**
