@@ -46,6 +46,7 @@ public class RobotMap {
     
     //    Joystick
     final public static int driveJoystickPort = 1;
+    final public static int operatorJoystickPort = 2;
     final public static int walleOpenButtonPort = 5;
     final public static int walleCloseButtonPort = 4;
     final public static int jesusAscendAllButtonPort = 3;
