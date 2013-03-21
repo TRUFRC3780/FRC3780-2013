@@ -14,16 +14,16 @@
 package org.usfirst.frc3780.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc3780.robot.RobotMap;
 
 /**
  *
- * @author Brian
+ * @author Brian & Oliver
  */
 public class AutoCommandGroup extends CommandGroup {
     
     public AutoCommandGroup() {
-        
-        //  TODO: Program autonomous.
-        
+        addSequential(new DriveForwardForTime(RobotMap.timeToGetToGoal, .5));
+        addSequential(new DumpInAuto());
     }
 }

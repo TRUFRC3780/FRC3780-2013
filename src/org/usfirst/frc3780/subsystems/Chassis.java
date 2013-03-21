@@ -65,5 +65,8 @@ public class Chassis extends Subsystem {
     public void initDefaultCommand() {
         setDefaultCommand(new DriveRobot());
     }
+    public void driveStraightAtSpeed(double speed){
+        _drive.setLeftRightMotorOutputs(speed, -speed);
+    }
     
 }
