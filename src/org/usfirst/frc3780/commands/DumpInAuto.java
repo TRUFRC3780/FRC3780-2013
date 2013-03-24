@@ -24,7 +24,7 @@ public class DumpInAuto extends CommandGroup {
     
     public DumpInAuto() {
 
-        addParallel(new DriveForwardForTime((15-RobotMap.timeToGetToGoal)-RobotMap.timeToDump, .25));
+        //addParallel(new DriveForwardForTime((15-RobotMap.timeToGetToGoal)-RobotMap.timeToDump, .25));
         addSequential(new JesusAscendAll());
         addSequential(new WallEOpen());
         addSequential(new JesusAscendRear());
