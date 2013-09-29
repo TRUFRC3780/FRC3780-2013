@@ -21,38 +21,15 @@ import edu.wpi.first.wpilibj.*;
  */
 public class RobotMap {
 
-    //    Solenoids
-    final public static int jesusFrontModule = 1;
-    final public static int jesusFrontForwardPort = 1;
-    final public static int jesusFrontReversePort = 2;
-    
-    final public static int jesusBackModule = 1;
-    final public static int jesusBackForwardPort = 7;
-    final public static int jesusBackReversePort = 4;
-    
     //    Drive
     final public static int chassisFrontLeftDriveID = 5;
     final public static int chassisRearLeftDriveID = 4;
     final public static int chassisFrontRightDriveID = 3;
     final public static int chassisRearRightDriveID = 2;
     
-    //    Compressor
-    final public static int compressorRelayChannel = 1;
-    final public static int compressorPressureSwitchChannel = 1;
-    
-    //    Servo
-    final public static int walleServoSlot = 1;
-    final public static int walleServoChannel = 1;
-    
     //    Joystick
     final public static int driveJoystickPort = 1;
     final public static int operatorJoystickPort = 2;
-    final public static int walleOpenButtonPort = 5;
-    final public static int walleCloseButtonPort = 4;
-    final public static int jesusAscendAllButtonPort = 3;
-    final public static int jesusAscendRearButtonPort = 1;
-    final public static int jesusCrucifyButtonPort = 2;
     
     final public static double timeToGetToGoal = 1;
-    final public static double timeToDump = 5;
 }

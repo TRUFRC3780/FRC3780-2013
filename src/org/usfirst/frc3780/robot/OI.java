@@ -37,31 +37,12 @@ public class OI {
     //  Instantiate the joystick buttons.
     private final Joystick driveJoystick;
     private final Joystick operatorJoystick;
-    private final Button walleOpenButton;
-    private final Button walleClosedButton;
-    private final Button jesusAscendAllButton;
-    private final Button jesusAscendRearButton;
-    private final Button jesusCrucifyButton;
     
     private OI() {
         
         driveJoystick = new Joystick(RobotMap.driveJoystickPort);
         operatorJoystick = new Joystick(RobotMap.operatorJoystickPort);
         
-        walleOpenButton = new JoystickButton(operatorJoystick, RobotMap.walleOpenButtonPort);
-        walleOpenButton.whenPressed(new WallEOpen());
-        
-        walleClosedButton = new JoystickButton(operatorJoystick, RobotMap.walleCloseButtonPort);
-        walleClosedButton.whenPressed(new WallEClose());
-        
-        jesusAscendAllButton = new JoystickButton(operatorJoystick, RobotMap.jesusAscendAllButtonPort);
-        jesusAscendAllButton.whenPressed(new JesusAscendAll());
-        
-        jesusAscendRearButton = new JoystickButton(operatorJoystick, RobotMap.jesusAscendRearButtonPort);
-        jesusAscendRearButton.whenPressed(new JesusAscendRear());
-        
-        jesusCrucifyButton = new JoystickButton(operatorJoystick, RobotMap.jesusCrucifyButtonPort);
-        jesusCrucifyButton.whenPressed(new JesusCrucify());
     }
     
     /**

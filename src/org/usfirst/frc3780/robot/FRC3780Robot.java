@@ -26,7 +26,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc3780.commands.AutoCommandGroup;
-import org.usfirst.frc3780.commands.JesusCrucify;
 import org.usfirst.frc3780.subsystems.*;
 
 /**
@@ -38,9 +37,7 @@ import org.usfirst.frc3780.subsystems.*;
  */
 public class FRC3780Robot extends IterativeRobot {
 
-    private Compressor _compressor;
     private Command autoCommand;
-    //  Command autonomousCommand;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -48,21 +45,9 @@ public class FRC3780Robot extends IterativeRobot {
      */
     public void robotInit() {
         
-        //  TODO: instantiate the command used for the autonomous period
-        //  autonomousCommand = new ExampleCommand();
-
-        //  Compressor code.
-        _compressor = new Compressor(RobotMap.compressorPressureSwitchChannel, RobotMap.compressorRelayChannel);
-        _compressor.start();
-        
         //  Initialize subsystems.
         Chassis.getInstance();
-        Jesus.getInstance();
-        WallE.getInstance();
         OI.getInstance();
-        
-        Scheduler.getInstance().add(new JesusCrucify());
-        Scheduler.getInstance().run();
         
         autoCommand = new AutoCommandGroup();
         
@@ -72,8 +57,6 @@ public class FRC3780Robot extends IterativeRobot {
      * This function runs when autonomous begins.
      */
     public void autonomousInit() {
-        // TODO: schedule the autonomous command
-        // autonomousCommand.start();
         autoCommand.start();
     }
 
@@ -88,8 +71,8 @@ public class FRC3780Robot extends IterativeRobot {
      * This function runs when teleop begins.
      */
     public void teleopInit() {
-        // TODO: Make sure autonomous stops running.
-        // autonomousCommand.cancel();
+        //  Make sure autonomous stops running. 
+        autoCommand.cancel();
     }
 
     /**
