@@ -13,48 +13,36 @@
 
 package org.usfirst.frc3780.commands;
 
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc3780.subsystems.Chassis;
+import org.usfirst.frc3780.subsystems.Blocker;
 
 /**
  *
- * @author ograff
+ * @author Brian
  */
-public class DriveForwardForTime extends Command{
+public class AbortPulley extends Command {
     
-    private Timer timer;
-    private double numberOfSeconds;
-    private double speed;
-    
-    public DriveForwardForTime(double numberOfSeconds, double speed) {
-
-        requires(Chassis.getInstance());
-        this.numberOfSeconds = numberOfSeconds;
-        timer = new Timer();
-        timer.stop();
-        this.speed = speed;
-        
+    public AbortPulley() {
+        requires(Blocker.getInstance());
     }
 
     protected void initialize() {
-        timer.start();
     }
 
     protected void execute() {
-        Chassis.getInstance().driveStraightAtSpeed(speed);
+        Blocker.getInstance().runCIM(Value.kOff);
     }
 
     protected boolean isFinished() {
-        // System.out.println(timer.get());
-        return timer.get() >= numberOfSeconds;
+        return Blocker.getInstance().PulleyState() == Value.kOff;
     }
 
     protected void end() {
-        Chassis.getInstance().driveStraightAtSpeed(0);
     }
 
     protected void interrupted() {
     }
-    
 }

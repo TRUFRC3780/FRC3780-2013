@@ -27,9 +27,18 @@ public class RobotMap {
     final public static int chassisFrontRightDriveID = 3;
     final public static int chassisRearRightDriveID = 2;
     
+    //    Relay
+    final public static int blockerServoSlot = 1;
+    final public static int blockerServoChannel = 1;
+    final public static double pulleyTime = 1; // in seconds
+    
     //    Joystick
     final public static int driveJoystickPort = 1;
     final public static int operatorJoystickPort = 2;
+    final public static int blockerExtendPulleyPort = 3;
+    final public static int blockerRetractPulleyPort = 2;
+    final public static int blockerAbortPulleyPort = 1;
     
+    //    Autonomous
     final public static double timeToGetToGoal = 1;
 }

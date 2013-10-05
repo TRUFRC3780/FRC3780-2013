@@ -14,6 +14,7 @@
 package org.usfirst.frc3780.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -37,11 +38,23 @@ public class OI {
     //  Instantiate the joystick buttons.
     private final Joystick driveJoystick;
     private final Joystick operatorJoystick;
+    private final Button blockerExtendPulleyButton;
+    private final Button blockerRetractPulleyButton;
+    private final Button blockerAbortPulleyButton;
     
     private OI() {
         
         driveJoystick = new Joystick(RobotMap.driveJoystickPort);
         operatorJoystick = new Joystick(RobotMap.operatorJoystickPort);
+        
+        blockerExtendPulleyButton = new JoystickButton(operatorJoystick, RobotMap.blockerExtendPulleyPort);
+        blockerExtendPulleyButton.whenPressed(new TogglePulley(RobotMap.pulleyTime, Relay.Value.kForward));
+        
+        blockerRetractPulleyButton = new JoystickButton(operatorJoystick, RobotMap.blockerRetractPulleyPort);
+        blockerRetractPulleyButton.whenPressed(new TogglePulley(RobotMap.pulleyTime, Relay.Value.kReverse));
+        
+        blockerAbortPulleyButton = new JoystickButton(operatorJoystick, RobotMap.blockerAbortPulleyPort);
+        blockerAbortPulleyButton.whenPressed(new AbortPulley());
         
     }
     

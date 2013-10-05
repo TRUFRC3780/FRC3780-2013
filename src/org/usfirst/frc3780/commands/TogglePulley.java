@@ -13,28 +13,27 @@
 
 package org.usfirst.frc3780.commands;
 
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc3780.subsystems.Chassis;
+import org.usfirst.frc3780.subsystems.Blocker;
 
 /**
  *
- * @author ograff
+ * @author Brian
  */
-public class DriveForwardForTime extends Command{
+public class TogglePulley extends Command {
     
     private Timer timer;
     private double numberOfSeconds;
-    private double speed;
+    private Relay.Value direction;
     
-    public DriveForwardForTime(double numberOfSeconds, double speed) {
-
-        requires(Chassis.getInstance());
+    public TogglePulley(double numberOfSeconds, Relay.Value direction) {
+        requires(Blocker.getInstance());
         this.numberOfSeconds = numberOfSeconds;
+        this.direction = direction;
         timer = new Timer();
         timer.stop();
-        this.speed = speed;
-        
     }
 
     protected void initialize() {
@@ -42,19 +41,17 @@ public class DriveForwardForTime extends Command{
     }
 
     protected void execute() {
-        Chassis.getInstance().driveStraightAtSpeed(speed);
+        Blocker.getInstance().runCIM(direction);
     }
 
     protected boolean isFinished() {
-        // System.out.println(timer.get());
         return timer.get() >= numberOfSeconds;
     }
 
     protected void end() {
-        Chassis.getInstance().driveStraightAtSpeed(0);
+        Blocker.getInstance().runCIM(Relay.Value.kOff);
     }
 
     protected void interrupted() {
     }
-    
 }
