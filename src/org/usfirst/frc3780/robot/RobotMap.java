@@ -40,5 +40,5 @@ public class RobotMap {
     final public static int blockerAbortPulleyPort = 1;
     
     //    Autonomous
-    final public static double timeToGetToGoal = 1;
+    final public static double timeToGetToGoal = 3;
 }

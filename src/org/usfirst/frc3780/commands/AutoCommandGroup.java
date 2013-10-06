@@ -23,6 +23,6 @@ import org.usfirst.frc3780.robot.RobotMap;
 public class AutoCommandGroup extends CommandGroup {
     
     public AutoCommandGroup() {
-//        addSequential(new DriveForwardForTime(RobotMap.timeToGetToGoal, .5));
+        addSequential(new DriveForwardForTime(RobotMap.timeToGetToGoal, .5));
     }
 }
